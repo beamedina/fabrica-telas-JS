@@ -1,0 +1,85 @@
+.bemVindo {
+  background-image: url('../../../public/Image/fundo.jpg');
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bemVindo h1 {
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 2.5rem; 
+}
+
+.divImagens {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.divImagens img {
+  width: 470px;
+  height: 700px;
+  object-fit: cover;
+  margin: 10px; 
+}
+
+.corpo {
+  background-color: #240404;
+}
+
+
+
+@media (max-width: 768px) {
+  .bemVindo {
+      height: 300px; 
+  }
+
+  .bemVindo h1 {
+      font-size: 2rem; 
+  }
+
+  .divImagens img {
+      width: 100%; 
+      height: auto; 
+      max-width: 470px; 
+  }
+
+  .divImagens {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bemVindo {
+      height: 200px; 
+  }
+
+  .bemVindo h1 {
+      font-size: 1.5rem; 
+  }
+
+  .divImagens img {
+      max-width: 100%; 
+  }
+
+  .divImagens {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 5px;
+  }
+}
