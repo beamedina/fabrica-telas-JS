@@ -8,7 +8,7 @@ import CadCliente from "@/app/bia-c-cliente";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openModalVendas, setOpenModalVendas] = useState(false); 
-  const [openModalCliente, setOpenModalCliente] = useState(false); 
+  const [openModalCliente, setOpenModalCliente] = useState(false);
   
 
   const toggleMenu = () => {
@@ -89,7 +89,7 @@ const Header = () => {
               </a>
             </li>
             <li className={styles.itemSubMenu}>
-              <a className={styles.linkSubmenu} href="/Maria/Cadastrar_Aparelhos/cadastrar_aparelhos.html">
+              <a className={styles.linkSubmenu} href="/">
                 Aparelhos
               </a>
             </li>
