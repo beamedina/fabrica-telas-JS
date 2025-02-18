@@ -9,6 +9,11 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openModalVendas, setOpenModalVendas] = useState(false); 
   const [openModalCliente, setOpenModalCliente] = useState(false); 
+  const [openModalAparelhos, setOpenModalAparelhos] = useState(false); 
+  const [openModalLogin, setOpenModalLogin] = useState(false);
+  const [openModalCargos, setOpenModalCargos] = useState(false);
+  const [openModalFuncionario, setFuncionario] = useState(false);
+  const [openModalExcluir, setOpenModalExcluir] = useState(false);    
   
 
   const toggleMenu = () => {
