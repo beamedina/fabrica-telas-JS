@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./cadastrar_aparelhos.module.css";
 import Image from "next/image";
 
-const Popup = ({ isOpen, setOpenModal  }) => {
+const CadAparelhos = ({ isOpen, setOpenModal  }) => {
   if (!isOpen) return null; 
 
   return (
@@ -39,4 +39,4 @@ const Popup = ({ isOpen, setOpenModal  }) => {
   );
 };
 
-export default Popup;
+export default CadAparelhos;

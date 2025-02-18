@@ -1,9 +1,9 @@
 
 import React from "react";
-import styles from "./cliente.module.css";
+import styles from "./c-cargos.module.css";
 import Image from "next/image";
 
-const CadCliente = ({ isOpen, setOpenModal }) => {
+const Cadcargo = ({ isOpen, setOpenModal }) => {
     if (!isOpen) return null;
 
   return (
@@ -42,6 +42,6 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
   );
 };
 
-export default CadCliente;
+export default Cadcargo;
 
 /*luiz*/
