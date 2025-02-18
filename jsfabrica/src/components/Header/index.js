@@ -18,6 +18,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
        <div className={styles.headerDiv}>
+         <button> 
           <Image
             className={styles.user}
             src='/Image/usuario.png'
@@ -25,10 +26,10 @@ const Header = () => {
             width={45}
             height={45}
           />
-          <h1>IFitness</h1>
+         </button>
         </div>
     <nav className={styles.nav}>
-      <h2 className={styles.logo}>Logo</h2>
+      <h1 className={styles.titulo}>IFitness</h1>
       <ul className={`${styles.menu} ${menuOpen ? styles.active : ""}`}>
         <li className={styles.itemMenu}>
           <a className={styles.linkMenu} href="#">

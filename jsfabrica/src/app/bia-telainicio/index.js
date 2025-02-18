@@ -9,7 +9,7 @@ const Inicio = () => {
             <Header />
             <main className={styles.corpo}>
                 <div className={styles.bemVindo}>
-                    <h1>Bem-Vindo(a) ao IFness!</h1>
+                    <h1>Bem-Vindo(a) ao IFitness!</h1>
                 </div>
                 <div className={styles.divImagens}>
                 <Image className={styles.user} src='/Image/mulher.jpg' alt='muié' width={470} height={700} />

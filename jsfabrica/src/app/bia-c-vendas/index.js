@@ -1,4 +1,4 @@
-// Popup.js
+
 import React from "react";
 import styles from "./vendas.module.css";
 import Image from "next/image";

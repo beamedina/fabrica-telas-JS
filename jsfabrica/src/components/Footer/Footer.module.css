@@ -1,11 +1,13 @@
 .footer {
     background-color: black;
     color: #ffffff;
-    height: 80px;
+    height: 100px;
     padding-top: 10px;
+    
   }
   
   .content {
     margin-left: 2%;
+    flex: 1;
   }
   

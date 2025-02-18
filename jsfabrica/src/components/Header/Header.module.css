@@ -21,6 +21,10 @@
   width: 100vw;
 }
 
+.titulo{
+  color: #ffff;
+}
+
 .menu {
   font-size: 18px;
   display: flex;
@@ -34,6 +38,8 @@
   right: 20px;
   flex-grow: 1;
 }
+
+
 
 .itemMenu {
   position: relative;
@@ -59,6 +65,7 @@
   display: block;
   color: #fff;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .subMenu a:hover {
@@ -66,7 +73,7 @@
 }
 
 .linkMenu {
-  font-size: 18px;
+  font-size: 22px;
   color: #fff;
   text-decoration: none;
 }
@@ -162,7 +169,7 @@
     right: -300px;
     width: 250px;
     height: 100vh;
-    background: #2a3239;
+    background: #530000;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
     padding: 20px 0 0 10px;
     transition: 0.3s ease-in-out;
