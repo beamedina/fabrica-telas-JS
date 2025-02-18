@@ -43,3 +43,5 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
 };
 
 export default CadCliente;
+
+/*luiz*/
