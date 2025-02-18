@@ -29,7 +29,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <label className={`${styles.label} ${styles.valor}`} htmlFor="cpf">  Descrição </label>
             <input
               type="text"
-              placeholder="Digite a Descrição"
+              placeholder="Digite a Descrição do usuário"
               className={styles.input}
             />
            
