@@ -20,6 +20,8 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // kgfbjoijgib
+
   return (
     <header className={styles.header}>
        <div className={styles.headerDiv}>
@@ -94,7 +96,7 @@ const Header = () => {
               </a>
             </li>
             <li className={styles.itemSubMenu}>
-              <a className={styles.linkSubmenu} href="/Maria/Cadastrar_Aparelhos/cadastrar_aparelhos.html">
+              <a className={styles.linkSubmenu} href="/">
                 Aparelhos
               </a>
             </li>
