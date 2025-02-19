@@ -11,3 +11,15 @@ body, html {
 main{
   width: 100%;
 }
+
+tr {
+  background-color: #272525;
+  color: #E5E5E5;
+  font-family: "Jockey One", sans-serif;
+}
+
+th, td {
+  border: 1px solid rgba(255, 255, 255, 0.863);
+  padding: 30px;
+  font-family: "Jockey One", sans-serif;
+}
