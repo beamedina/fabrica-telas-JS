@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./r-cargos.module.css.js"
+import styles from "./r-cargos.module.css"
 
 
 export default function tabela() {
@@ -21,6 +21,7 @@ export default function tabela() {
             <h1> Registro de Cargos</h1>
             <table className={styles.table}>
                 <thead>
+                    
                     <tr>
                         <th>Cargo</th>
                         <th>Descrição</th>
