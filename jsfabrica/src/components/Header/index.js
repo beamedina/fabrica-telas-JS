@@ -8,6 +8,7 @@ import Cadcargo from "@/app/luiz-c-cargos/page";
 import ExcluirFunci from "@/app/mari_excluir/page";
 import CadAparelhos from "@/app/maria-c-aparelhos/page";
 import Login from "@/app/maria-t-login/page";
+import CadFuncionario from "@/app/Leticia-c-funcionario/page";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -109,7 +110,7 @@ const Header = () => {
           </ul>
         </li>
         <li className={styles.itemMenu}>
-          <a className={styles.linkMenu} href="/marianny/Telas_Planos/tela_planos.html">
+          <a className={styles.linkMenu} href="/mari_telaplanos">
             Planos
           </a>
         </li>
@@ -146,6 +147,7 @@ const Header = () => {
       <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalCargos} />
       <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
       <Login isOpen={openModalLogin} setOpenModal={setOpenModalLogin} />
+      <CadFuncionario isOpen={openModalFuncionario} setOpenModal={setOpenModalFuncionario} />
     </header>
   );
 };

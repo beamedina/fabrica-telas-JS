@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./funcionario.module.css";
 import Image from "next/image";
 
-const CadCliente = ({ isOpen, setOpenModal }) => {
+const CadFuncionario = ({ isOpen, setOpenModal }) => {
     if (!isOpen) return null;
 
   return (
@@ -59,4 +59,4 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
   );
 };
 
-export default CadCliente;
+export default CadFuncionario;
