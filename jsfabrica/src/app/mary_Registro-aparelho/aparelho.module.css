@@ -15,6 +15,10 @@
     overflow-x: auto; 
 }
 
+/* .thead{
+    background-color: rgb(63, 63, 63);
+} */
+
 .botaoPrimario, .botaoSecundario {
     background-color: #D23636;
     color: #E5E5E5;

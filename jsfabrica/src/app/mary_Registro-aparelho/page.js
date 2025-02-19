@@ -8,89 +8,84 @@ import ExcluirFunci from "../mari_excluir/page";
 
 const RegistroAparelhos = () => {
 
-    const [openModalExcluir, setOpenModalExcluir] = useState(false);    // excluir funcionario
-const [openModalAparelhos, setOpenModalAparelhos] = useState(false);  //cadastro aparelhos
-    
+  const [openModalExcluir, setOpenModalExcluir] = useState(false);    // excluir funcionario
+  const [openModalAparelhos, setOpenModalAparelhos] = useState(false);  //cadastro aparelhos
+
   return (
-    
+
     <div>
-        <Header />
+      <Header />
       <h1 className={styles.title}>Registro de aparelhos</h1>
 
       <table className={styles.table}>
-        <tr>
-          <th>Aparelho</th>
-          <th>Peso</th>
-          <th>ID</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Aparelho</th>
+            <th>Peso</th>
+            <th>ID</th>
+          </tr>
+        </thead>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
-    <div className={styles.botoes}>
-      <button className={styles.botaoPrimario} type="submit"onClick={() => setOpenModalAparelhos(true)}>
-        REGISTRAR APARELHO
-      </button>
-      <button className={styles.botaoSecundario} type="submit" onClick={() => setOpenModalExcluir(true)}>
-        EXCLUIR APARELHO
-      </button>
+      <div className={styles.botoes}>
+        <button className={styles.botaoPrimario} type="submit" onClick={() => setOpenModalAparelhos(true)}>
+          REGISTRAR APARELHO
+        </button>
+        <button className={styles.botaoSecundario} type="submit" onClick={() => setOpenModalExcluir(true)}>
+          EXCLUIR APARELHO
+        </button>
       </div>
       <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
       <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
