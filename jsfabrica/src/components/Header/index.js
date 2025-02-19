@@ -66,7 +66,7 @@ const Header = () => {
               </a>
             </li>
             <li className={styles.itemSubMenu}>
-              <a className={styles.linkSubmenu} href="/mari_Registro-aparelho">
+              <a className={styles.linkSubmenu} href="/mari-r-aparelho">
                 Aparelhos
               </a>
             </li>

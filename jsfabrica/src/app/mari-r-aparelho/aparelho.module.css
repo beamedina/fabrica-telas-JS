@@ -1,72 +1,65 @@
-/* public/styles.css */
+.title {
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+  font-family: "Gentium Plus", serif;
+  font-weight: 100;
+}
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, black, #8B0000);
-    height: 100%;
+.table {
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 1%;
+  width: 90%;
+  overflow-x: auto;
+}
+
+.botaoPrimario, .botaoSecundario {
+  background-color: #D23636;
+  color: #E5E5E5;
+  width: 200px;
+  height: 40px;
+  font-family: "Jockey One", sans-serif;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .title {
+      font-size: 30px;
   }
 
-  
-  
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  .botaoPrimario, .botaoSecundario {
+      width: 150px;
+      height: 35px;
   }
-  
-  .titulo {
-    font-size: 36px;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .tabela {
-    width: 80%;
-    border-collapse: collapse;
-    background-color: #333;
-    color: white;
-  }
-  
-  .tabela th, .tabela td {
-    border: 1px solid #555;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .tabela th {
-    background-color: #444;
-    font-weight: bold;
-  }
-  
+
   .botoes {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
+      justify-content: center;
   }
-  
-  .botao {
-    background-color: #D32F2F;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 24px;
   }
-  
-  .botao:hover {
-    background-color: #B71C1C;
+
+  .botaoPrimario, .botaoSecundario {
+      width: 100%;
+      margin: 5px 0;
   }
-  
-  .botao:focus {
-    outline: none;
+
+  .botoes {
+      flex-direction: column;
   }
-  
+}

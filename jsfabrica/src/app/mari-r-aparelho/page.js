@@ -1,43 +1,106 @@
-// pages/index.js
-import React from 'react';
-import Head from 'next/head';
-import Image from "next/image";
-import styles from ".aparelho.module.css"
+"use client";
+
+import React, { useState } from "react";
+import styles from "./aparelho.module.css";
+import Header from "@/components/Header";
+import CadAparelhos from "../maria-c-aparelhos/page";
+import ExcluirFunci from "../mari_excluir/page";
 
 const RegistroAparelhos = () => {
+  const [openModalExcluir, setOpenModalExcluir] = useState(false); // excluir funcionario
+  const [openModalAparelhos, setOpenModalAparelhos] = useState(false); // cadastro aparelhos
+
   return (
-    <div className="container">
-      <Head>
-        <title>Registro de Aparelhos</title>
-      </Head>
-      <h1 className="titulo">Registro de aparelhos</h1>
+    <div>
+      <Header />
+      <h1 className={styles.title}>Registro de aparelhos</h1>
+      <table className={styles.table}>
+      <tr>
+          <th>Aparelho</th>
+          <th>Peso</th>
+          <th>ID</th>
+        </tr>
 
-      <table className="tabela">
-        <thead>
-          <tr>
-            <th>Aparelho</th>
-            <th>Peso</th>
-            <th>Id</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[...Array(10)].map((_, index) => (
-            <tr key={index}>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          ))}
-        </tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
       </table>
-
-      <div className="botoes">
-        <button className="botao">REGISTRAR APARELHO</button>
-        <button className="botao">EXCLUIR APARELHOS</button>
+      <div className={styles.botoes}>
+        <button
+          className={styles.botaoPrimario}
+          type="submit"
+          onClick={() => setOpenModalAparelhos(true)}
+        >
+          REGISTRAR APARELHO
+        </button>
+        <button
+          className={styles.botaoSecundario}
+          type="submit"
+          onClick={() => setOpenModalExcluir(true)}
+        >
+          EXCLUIR APARELHO
+        </button>
       </div>
+      <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
+      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
     </div>
   );
 };
 
 export default RegistroAparelhos;
-
