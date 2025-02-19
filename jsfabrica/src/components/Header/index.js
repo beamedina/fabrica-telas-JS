@@ -41,7 +41,7 @@ const Header = () => {
       <h1 className={styles.titulo}>IFitness</h1>
       <ul className={`${styles.menu} ${menuOpen ? styles.active : ""}`}>
         <li className={styles.itemMenu}>
-          <a className={styles.linkMenu} href="#">
+          <a className={styles.linkMenu} href="/">
             Home
           </a>
         </li>
