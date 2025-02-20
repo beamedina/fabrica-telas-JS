@@ -1,51 +1,108 @@
-import React from "react";
-import styles from "./r-cargos.module.css"
+"use client";
+import React, { useState } from "react";
+import styles from "./r-cargos.module.css";
+import Header from "@/components/Header";
+import Cadcargo from "../luiz-c-cargos/page";
+import ExcluirFunci from "../mari_excluir/page";
 
+const RegistroCargo = () => {
+  const [openModalExcluir, setOpenModalExcluir] = useState(false); // excluir cargos
+  const [openModalCargos, setOpenModalCargos] = useState(false); // cadastro cargos
 
-export default function tabela() {
-    const usuarios = [
-        { cargo: "", descricao: "", id: 1 },
-        { cargo: "", descricao: "", id: 2 },
-        { cargo: "", descricao: "", id: 3 },
-        { cargo: "", descricao: "", id: 4 },
-        { cargo: "", descricao: "", id: 5 },
-        { cargo: "", descricao: "", id: 6 },
-        { cargo: "", descricao: "", id: 7 },
-        { cargo: "", descricao: "", id: 8 },
-        { cargo: "", descricao: "", id: 9 }
+  return (
+    <div>
+      <Header />
+      <h1 className={styles.title}>Registro de Cargos</h1>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Cargos</th>
+            <th>Descrição</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-    ];
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-    return(
-        <div>
-            <h1> Registro de Cargos</h1>
-            <table className={styles.table}>
-                <thead>
-                    
-                    <tr>
-                        <th>Cargo</th>
-                        <th>Descrição</th>
-                        <th>Id</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {usuarios.map ((user) => (
-                        <tr key={user.cargo}>
-                            <td> {user.cargo} </td>
-                            <td> {user.descricao} </td>
-                            <td> {user.id} </td>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-                        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-                    ))}
-                </tbody>
-            </table>
-            <button type="submit" className={styles.button}> Registrar Cargo </button>
-            <button type="submit" className={styles.button}> Excluir Cargo </button>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        </div>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-    );
-}
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div className={styles.botoes}>
+        <button
+          className={styles.botaoPrimario}
+          type="submit"
+          onClick={() => setOpenModalCargos(true)}
+        >
+          REGISTRAR CARGOS
+        </button>
+        <button
+          className={styles.botaoSecundario}
+          type="submit"
+          onClick={() => setOpenModalExcluir(true)}
+        >
+          EXCLUIR CARGOS
+        </button>
+      </div>
+      <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalCargos} />
+      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+    </div>
+  );
+};
+
+export default RegistroCargo;

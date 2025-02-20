@@ -18,7 +18,7 @@ const ExcluirFunci = ({ isOpen, setOpenModal  }) => {
          onClick={() => setOpenModal (false)} 
               />
         <div className={styles.div}>
-          <h1>Excluir cadastro</h1>
+          <h1>Excluir Cadastro</h1>
           <form action="/login" method="post">
             <label className={styles.label} htmlFor="plano"> ID do item a ser excluido  </label>
             <input

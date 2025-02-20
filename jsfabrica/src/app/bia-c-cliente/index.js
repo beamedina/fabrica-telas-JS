@@ -18,7 +18,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
          onClick={() => setOpenModal(false)} 
               />
         <div className={styles.div}>
-          <h1>Cadastrar Vendas</h1>
+          <h1>Cadastrar Cliente</h1>
           <form action="/login" method="post">
             <label className={styles.label} htmlFor="plano"> Plano </label>
             <input

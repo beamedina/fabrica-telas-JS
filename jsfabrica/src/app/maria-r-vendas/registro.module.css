@@ -1,0 +1,66 @@
+.title {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-family: "Gentium Plus", serif;
+    font-weight: 100;
+  }
+  
+  .table {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 1%;
+    width: 90%;
+    overflow-x: auto;
+  }
+  
+  .botaoPrimario, .botaoSecundario {
+    background-color: #D23636;
+    color: #E5E5E5;
+    width: 200px;
+    height: 40px;
+    font-family: "Jockey One", sans-serif;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+        font-size: 30px;
+    }
+  
+    .botaoPrimario, .botaoSecundario {
+        width: 150px;
+        height: 35px;
+    }
+  
+    .botoes {
+        justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+        font-size: 24px;
+    }
+  
+    .botaoPrimario, .botaoSecundario {
+        width: 100%;
+        margin: 5px 0;
+    }
+  
+    .botoes {
+        flex-direction: column;
+    }
+  }
+  

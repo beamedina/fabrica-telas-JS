@@ -18,7 +18,7 @@ const Cadcargo = ({ isOpen, setOpenModal }) => {
          onClick={() => setOpenModal(false)} 
               />
         <div className={styles.div}>
-          <h1>Cadastrar Vendas</h1>
+          <h1>Cadastrar Cargos</h1>
           <form action="/login" method="post">
             <label className={styles.label} htmlFor="plano"> Nome </label>
             <input

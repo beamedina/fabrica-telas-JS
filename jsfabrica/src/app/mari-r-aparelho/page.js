@@ -12,7 +12,7 @@ const RegistroAparelhos = () => {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>Registro de aparelhos</h1>
+      <h1 className={styles.title}>Registro de Aparelhos</h1>
       <table className={styles.table}>
         <thead>
           <tr>
