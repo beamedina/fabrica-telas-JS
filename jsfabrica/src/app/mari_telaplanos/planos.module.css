@@ -1,84 +1,79 @@
-
-.container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+/* PlansSection.module.css */
+.plansSection {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    margin: 50px auto;
+    max-width: 1000px;
+    gap: 20px;
+    height: 800px;
 }
 
-
-.titulo {
-  font-size: 36px;
-  color: white;
-  margin-bottom: 40px;
-}
-
-.planos {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  /*display: flex;
-  justify-content: space-around;
-  width: 80%;*/
-}
-
-.plano {
-  color: white;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  text-align: center;
-}
-
-.plano h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.preco {
-  background-color: #333;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.plan {
+  background: #272525;
   padding: 20px;
   text-align: center;
   color: white;
   width: 250px;
- /* width: 300px;*/
+  margin:  auto;
+  border: solid black 3px;
+  border-radius: 50px black ;
 }
 
-.plano ul {
-  list-style: none;
+.h1  {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-family: "Jockey One", sans-serif;
+  text-align: center;
+  color: #ffff;
+}
+
+.plan p {
+  font-size: 50px;
+  font-family: "Gentium Plus", serif;
+}
+
+.plan ul {
+  list-style-type: none;
   padding: 0;
 }
 
-.plano ul li {
+.plan ul li {
   margin-bottom: 10px;
+  font-family: "Gentium Plus", serif;
+  font-size: 25px;
 }
 
-@media (max-width: 768px) {
-  .planos {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .plano {
-    margin-bottom: 20px;
-    width: 100%;
-  }
+.plano {
+  background: #272525;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  width: 250px;
+  margin-bottom: 424px;
 }
 
-  
+.plano p {
+  font-size: 50px;
+  font-family: "Gentium Plus", serif;
+}
+
+.plano ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.plano li {
+  margin-bottom: 10px;
+  font-family: "Gentium Plus", serif;
+  font-size: 25px;
+}
+
+.liPlanoMen {
+  margin-bottom: 55px;
+}
+
+.liPlanoAnu {
+  margin-bottom: 55px;
+}

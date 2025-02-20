@@ -1,47 +1,46 @@
 import React from 'react';
-import Head from 'next/head';
-import styles from "./planos.module.css"
+import styles from './planos.module.css';
+import Header from '@/components/Header';
 
 const Planos = () => {
   return (
-    <div className="container">
-     
-        <title>Planos</title>
-     
-      <h1 className="titulo">Escolha seu plano</h1>
-
-      <div className="planos">
-        <div className="plano">
-          <h2>Plano Mensal.</h2>
-          <div className="preco">R$90,00</div>
+    <div>
+    <Header/>
+    <section className={styles.plansSection}>
+      <div>
+        <h1 className={styles.h1}>Plano Mensal</h1>
+        <div className={styles.plan}>
+          <p>R$90,00</p>
           <ul>
-            <li>Acesso à todos os aparelhos</li>
-            <li>Horários - 05:00 às 23:00</li>
+            <li>Acesso a todos os aparelhos</li>
+            <li className={styles.liPlanoMen}>Horários - 05:00 às 23:00</li>
           </ul>
         </div>
+      </div>
 
-     
-        <div className="plano">
-          <h2>Plano Anual.</h2>
-          <div className="preco">R$900,00</div>
+      <div>
+        <h2>Plano Anual</h2>
+        <div className={styles.plan}>
+          <p>R$900,00</p>
           <ul>
-            <li>Acesso à todos os aparelhos</li>
-            <li>Horários - 05:00 às 23:00</li>
+            <li>Acesso a todos os aparelhos</li>
+            <li className={styles.liPlanoAnu}>Horários - 05:00 às 23:00</li>
           </ul>
         </div>
+      </div>
 
-       
-        <div className="plano">
-          <h2>Plano Vip.</h2>
-          <div className="preco">R$130,00</div>
+      <div>
+        <h3>Plano Vip</h3>
+        <div className={styles.plan}>
+          <p>R$130,00</p>
           <ul>
-            <li>Acesso à todos os aparelhos</li>
-            <li>Horários - 05:00 às 23:00</li>
+            <li>Acesso a todos os aparelhos</li>
             <li>Acesso à zumba</li>
             <li>Acesso à hidroginástica</li>
           </ul>
         </div>
       </div>
+    </section>
     </div>
   );
 };
