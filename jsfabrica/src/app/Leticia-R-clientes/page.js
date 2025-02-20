@@ -12,128 +12,123 @@ const RegistroClientes = () => {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>Registro de Clientes</h1>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
-            <th>Plano</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.botoes}>
-        <button
-          className={styles.botaoPrimario}
-          type="submit"
-          onClick={() => setOpenModalCliente(true)}
-        >
-          REGISTRAR CLIENTE
-        </button>
-        <button
-          className={styles.botaoSecundario}
-          type="submit"
-          onClick={() => setOpenModalExcluir(true)}
-        >
-          EXCLUIR CLIENTE
-        </button>
-      </div>
-      <CadCliente isOpen={openModalCliente} setOpenModal={setOpenModalCliente} />
-      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      <main>
+        <h1 className={styles.title}>Registro de Clientes</h1>
+        <div className={styles.container}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Plano</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.botoes}>
+          <button
+            className={styles.botaoPrimario}
+            type="submit"
+            onClick={() => setOpenModalCliente(true)}
+          >
+            REGISTRAR CLIENTE
+          </button>
+          <button
+            className={styles.botaoSecundario}
+            type="submit"
+            onClick={() => setOpenModalExcluir(true)}
+          >
+            EXCLUIR CLIENTE
+          </button>
+        </div>
+        <CadCliente isOpen={openModalCliente} setOpenModal={setOpenModalCliente} />
+        <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      </main>
     </div>
   );
 };

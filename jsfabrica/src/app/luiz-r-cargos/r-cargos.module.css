@@ -48,6 +48,10 @@
         justify-content: center;
     }
   }
+
+  .container{
+    overflow-x: scroll;
+  }
   
   @media (max-width: 480px) {
     .title {

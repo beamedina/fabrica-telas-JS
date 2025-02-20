@@ -12,95 +12,90 @@ const RegistroAparelhos = () => {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>Registro de Aparelhos</h1>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Aparelho</th>
-            <th>Peso</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.botoes}>
-        <button
-          className={styles.botaoPrimario}
-          type="submit"
-          onClick={() => setOpenModalAparelhos(true)}
-        >
-          REGISTRAR APARELHO
-        </button>
-        <button
-          className={styles.botaoSecundario}
-          type="submit"
-          onClick={() => setOpenModalExcluir(true)}
-        >
-          EXCLUIR APARELHO
-        </button>
-      </div>
-      <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
-      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      <main>
+        <h1 className={styles.title}>Registro de Aparelhos</h1>
+        <div className={styles.container}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Aparelho</th>
+                <th>Peso</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.botoes}>
+          <button
+            className={styles.botaoPrimario}
+            type="submit"
+            onClick={() => setOpenModalAparelhos(true)}
+          >
+            REGISTRAR APARELHO
+          </button>
+          <button
+            className={styles.botaoSecundario}
+            type="submit"
+            onClick={() => setOpenModalExcluir(true)}
+          >
+            EXCLUIR APARELHO
+          </button>
+        </div>
+        <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
+        <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      </main>
     </div>
   );
 };

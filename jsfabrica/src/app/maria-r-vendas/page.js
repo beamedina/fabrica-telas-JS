@@ -12,117 +12,112 @@ const RegistroVendas = () => {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>Registro de Vendas</h1>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Plano</th>
-            <th>Valor</th>
-            <th>Comprador</th>
-            <th>Vendedor</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.botoes}>
-        <button
-          className={styles.botaoPrimario}
-          type="submit"
-          onClick={() => setOpenModalVendas(true)}
-        >
-          REGISTRAR VENDAS
-        </button>
-        <button
-          className={styles.botaoSecundario}
-          type="submit"
-          onClick={() => setOpenModalExcluir(true)}
-        >
-          EXCLUIR VENDAS
-        </button>
-      </div>
-      <Popup isOpen={openModalVendas} setOpenModal={setOpenModalVendas} />
-      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      <main>
+        <h1 className={styles.title}>Registro de Vendas</h1>
+        <div className={styles.container}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Plano</th>
+                <th>Valor</th>
+                <th>Comprador</th>
+                <th>Vendedor</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.botoes}>
+          <button
+            className={styles.botaoPrimario}
+            type="submit"
+            onClick={() => setOpenModalVendas(true)}
+          >
+            REGISTRAR VENDAS
+          </button>
+          <button
+            className={styles.botaoSecundario}
+            type="submit"
+            onClick={() => setOpenModalExcluir(true)}
+          >
+            EXCLUIR VENDAS
+          </button>
+        </div>
+        <Popup isOpen={openModalVendas} setOpenModal={setOpenModalVendas} />
+        <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      </main>
     </div>
   );
 };

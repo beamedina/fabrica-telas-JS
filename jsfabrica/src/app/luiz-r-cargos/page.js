@@ -12,95 +12,90 @@ const RegistroCargo = () => {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>Registro de Cargos</h1>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Cargos</th>
-            <th>Descrição</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.botoes}>
-        <button
-          className={styles.botaoPrimario}
-          type="submit"
-          onClick={() => setOpenModalCargos(true)}
-        >
-          REGISTRAR CARGOS
-        </button>
-        <button
-          className={styles.botaoSecundario}
-          type="submit"
-          onClick={() => setOpenModalExcluir(true)}
-        >
-          EXCLUIR CARGOS
-        </button>
-      </div>
-      <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalCargos} />
-      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      <main>
+        <h1 className={styles.title}>Registro de Cargos</h1>
+        <div className={styles.container}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Cargos</th>
+                <th>Descrição</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.botoes}>
+          <button
+            className={styles.botaoPrimario}
+            type="submit"
+            onClick={() => setOpenModalCargos(true)}
+          >
+            REGISTRAR CARGOS
+          </button>
+          <button
+            className={styles.botaoSecundario}
+            type="submit"
+            onClick={() => setOpenModalExcluir(true)}
+          >
+            EXCLUIR CARGOS
+          </button>
+        </div>
+        <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalCargos} />
+        <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      </main>
     </div>
   );
 };
