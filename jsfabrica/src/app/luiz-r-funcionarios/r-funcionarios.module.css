@@ -33,6 +33,8 @@
     margin: 20px auto;
     flex-wrap: wrap;
   }
+
+  /* llako */
   
   @media (max-width: 768px) {
     .title {
@@ -47,6 +49,10 @@
     .botoes {
         justify-content: center;
     }
+  }
+
+  .container{
+    overflow-x: scroll;
   }
   
   @media (max-width: 480px) {

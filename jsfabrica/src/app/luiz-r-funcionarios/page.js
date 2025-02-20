@@ -12,128 +12,123 @@ const RegistroFuncionario = () => {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>Registro de Funcionários</h1>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
-            <th>Plano</th>
-            <th>ID</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.botoes}>
-        <button
-          className={styles.botaoPrimario}
-          type="submit"
-          onClick={() => setOpenModalFuncionario(true)}
-        >
-          REGISTRAR FUNCIONÁRIO
-        </button>
-        <button
-          className={styles.botaoSecundario}
-          type="submit"
-          onClick={() => setOpenModalExcluir(true)}
-        >
-          EXCLUIR FUNCIONÁRIO
-        </button>
-      </div>
-      <CadFuncionario isOpen={openModalFuncionario} setOpenModal={setOpenModalFuncionario} />
-      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      <main>
+        <h1 className={styles.title}>Registro de Funcionários</h1>
+        <div className={styles.container}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Plano</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className={styles.botoes}>
+          <button
+            className={styles.botaoPrimario}
+            type="submit"
+            onClick={() => setOpenModalFuncionario(true)}
+          >
+            REGISTRAR FUNCIONÁRIO
+          </button>
+          <button
+            className={styles.botaoSecundario}
+            type="submit"
+            onClick={() => setOpenModalExcluir(true)}
+          >
+            EXCLUIR FUNCIONÁRIO
+          </button>
+        </div>
+        <CadFuncionario isOpen={openModalFuncionario} setOpenModal={setOpenModalFuncionario} />
+        <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+      </main>
     </div>
   );
 };
