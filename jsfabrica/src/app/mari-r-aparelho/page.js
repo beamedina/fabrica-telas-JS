@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import styles from "./aparelho.module.css";
 import Header from "@/components/Header";
@@ -15,71 +14,74 @@ const RegistroAparelhos = () => {
       <Header />
       <h1 className={styles.title}>Registro de aparelhos</h1>
       <table className={styles.table}>
-      <tr>
-          <th>Aparelho</th>
-          <th>Peso</th>
-          <th>ID</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Aparelho</th>
+            <th>Peso</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
       <div className={styles.botoes}>
         <button
