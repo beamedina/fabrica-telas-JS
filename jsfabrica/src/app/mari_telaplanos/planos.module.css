@@ -10,6 +10,10 @@
     height: 800px;
 }
 
+.mainPlanos{
+  padding-top: 140px;
+}
+
 .plan {
   background: #272525;
   padding: 20px;
