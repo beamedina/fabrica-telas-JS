@@ -20,12 +20,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
         <div className={styles.div}>
           <h1>Cadastrar Cliente</h1>
           <form action="/login" method="post">
-            <label className={styles.label} htmlFor="plano"> Plano </label>
-            <input
-              type="text"
-              placeholder="Digite o plano do usuário"
-              className={styles.input}
-            />
+ 
             <label className={`${styles.label} ${styles.valor}`} htmlFor="cpf">  CPF </label>
             <input
               type="text"
@@ -48,6 +43,12 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <input
               type="text"
               placeholder="Digite o telefone do usuário"
+              className={styles.input}
+            />
+                       <label className={styles.label} htmlFor="plano"> Plano </label>
+            <input
+              type="text"
+              placeholder="Digite o plano do usuário"
               className={styles.input}
             />
             

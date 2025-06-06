@@ -8,30 +8,53 @@ const CadFuncionario = ({ isOpen, setOpenModal }) => {
   const [nome, setNome] = useState("");
   const [endereco, setEndereco] = useState("");
   const [telefone, setTelefone] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [rg, setRg] = useState("");
+  const [cnh, setCnh] = useState("");
 
   if (!isOpen) return null;
 
-  const handleSubmit = async () => {
+  const resetForm = () => {
+    setCargo("");
+    setCpf("");
+    setNome("");
+    setEndereco("");
+    setTelefone("");
+    setEmail("");
+    setSenha("");
+    setRg("");
+    setCnh("");
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Evita o refresh da página
+
     try {
       const response = await fetch("https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           cargo,
           cpf,
           nome,
           endereco,
-          telefone
-        })
+          telefone,
+          email,
+          senha,
+          rg,
+          cnh,
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         alert("Funcionário cadastrado com sucesso!");
-        setOpenModal(false); // fecha o modal
+        resetForm();
+        setOpenModal(false); // Fecha o modal
       } else {
         alert("Erro ao cadastrar: " + data.message);
       }
@@ -52,7 +75,7 @@ const CadFuncionario = ({ isOpen, setOpenModal }) => {
           height={20}
           onClick={() => setOpenModal(false)}
         />
-        <div className={styles.div}>
+        <form className={styles.div} onSubmit={handleSubmit}>
           <h1>Cadastrar Funcionário</h1>
 
           <label className={styles.label}>Cargo</label>
@@ -100,10 +123,46 @@ const CadFuncionario = ({ isOpen, setOpenModal }) => {
             onChange={(e) => setTelefone(e.target.value)}
           />
 
-          <button type="button" className={styles.button} onClick={handleSubmit}>
+          <label className={styles.label}>Email</label>
+          <input
+            type="text"
+            placeholder="Digite o email do funcionário"
+            className={styles.input}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label className={styles.label}>Senha</label>
+          <input
+            type="text"
+            placeholder="Digite a senha do funcionário"
+            className={styles.input}
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
+
+          <label className={styles.label}>RG</label>
+          <input
+            type="text"
+            placeholder="Digite o RG do funcionário"
+            className={styles.input}
+            value={rg}
+            onChange={(e) => setRg(e.target.value)}
+          />
+
+          <label className={styles.label}>CNH</label>
+          <input
+            type="text"
+            placeholder="Digite a CNH do funcionário"
+            className={styles.input}
+            value={cnh}
+            onChange={(e) => setCnh(e.target.value)}
+          />
+
+          <button type="submit" className={styles.button}>
             Registrar
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
