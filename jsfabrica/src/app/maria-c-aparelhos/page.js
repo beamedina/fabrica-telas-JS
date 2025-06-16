@@ -1,3 +1,4 @@
+'use client';
 import React, {useState} from "react";
 import styles from "./cadastrar_aparelhos.module.css";
 import Image from "next/image";
