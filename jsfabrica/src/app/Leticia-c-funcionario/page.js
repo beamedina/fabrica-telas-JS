@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import styles from "./funcionario.module.css";
 import Image from "next/image";
