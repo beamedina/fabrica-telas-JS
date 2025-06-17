@@ -2,9 +2,7 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import Image from 'next/image';
-import Popup from "@/app/bia-c-vendas";
 import CadCliente from "@/app/bia-c-cliente";
-import Cadcargo from "@/app/luiz-c-cargos/page";
 import ExcluirFunci from "@/app/mari_excluir/page";
 import CadAparelhos from "@/app/maria-c-aparelhos/page";
 import Login from "@/app/maria-t-login/page";
@@ -12,11 +10,9 @@ import CadFuncionario from "@/app/Leticia-c-funcionario/page";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openModalVendas, setOpenModalVendas] = useState(false); 
   const [openModalCliente, setOpenModalCliente] = useState(false); 
   const [openModalAparelhos, setOpenModalAparelhos] = useState(false);  //cadastro aparelhos
   const [openModalLogin, setOpenModalLogin] = useState(false); // login
-  const [openModalCargos, setOpenModalCargos] = useState(false);  //cadastrar cargo
   const [openModalFuncionario, setOpenModalFuncionario] = useState(false); // cadastrar funcionario
   const [openModalExcluir, setOpenModalExcluir] = useState(false);    // excluir funcionario
 
@@ -61,25 +57,15 @@ const Header = () => {
               </a>
             </li>
             <li className={styles.itemSubMenu}>
-              <a className={styles.linkSubmenu} href="/luiz-r-cargos">
-                Cargos
-              </a>
-            </li>
-            <li className={styles.itemSubMenu}>
               <a className={styles.linkSubmenu} href="/mari-r-aparelho">
                 Aparelhos
-              </a>
-            </li>
-            <li className={styles.itemSubMenu}>
-              <a className={styles.linkSubmenu} href="/maria-r-vendas">
-                Vendas
               </a>
             </li>
           </ul>
         </li>
         <li className={styles.itemMenu}>
           <a className={styles.linkMenu} href="#">
-            Cadastramentos
+            Cadastrar
           </a>
           <ul className={styles.subMenu}>
             <li className={styles.itemSubMenu} onClick={() => setOpenModalFuncionario(true)}>
@@ -92,19 +78,9 @@ const Header = () => {
                 Clientes
               </a>
             </li>
-            <li className={styles.itemSubMenu} onClick={() => setOpenModalCargos(true)}>
-              <a className={styles.linkSubmenu}>
-                Cargos
-              </a>
-            </li>
             <li className={styles.itemSubMenu} onClick={() => setOpenModalAparelhos(true)}>
               <a className={styles.linkSubmenu}>
                 Aparelhos
-              </a>
-            </li>
-            <li className={styles.itemSubMenu} onClick={() => setOpenModalVendas(true)}>
-              <a className={styles.linkSubmenu}>
-                Vendas
               </a>
             </li>
           </ul>
@@ -141,10 +117,8 @@ const Header = () => {
           <span className={styles.bar}></span>
         </div>
       </div>
-      <Popup isOpen={openModalVendas} setOpenModal={setOpenModalVendas} />
       <CadCliente isOpen={openModalCliente} setOpenModal={setOpenModalCliente} />
       <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
-      <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalCargos} />
       <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
       <Login isOpen={openModalLogin} setOpenModal={setOpenModalLogin} />
       <CadFuncionario isOpen={openModalFuncionario} setOpenModal={setOpenModalFuncionario} />
