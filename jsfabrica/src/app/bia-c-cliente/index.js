@@ -3,6 +3,7 @@
 import React,{useState}from "react";
 import styles from "./cliente.module.css";
 import Image from "next/image";
+//importa
 
 const CadCliente = ({ isOpen, setOpenModal }) => {
     if (!isOpen) return null;
