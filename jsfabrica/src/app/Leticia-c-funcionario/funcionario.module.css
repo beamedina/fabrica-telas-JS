@@ -1,32 +1,33 @@
 .back {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 90vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
   
-  .CadCliente {
-    background: linear-gradient(to bottom, #000, #530c0c);
-    border-radius: 10px;
-    padding: 20px;
-    width: 1020px;
-    height: 900px;
-    max-width: 600px;
-   
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
+.CadCliente {
+  background: linear-gradient(to bottom, #000, #530c0c);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90vw;
+  max-width: 600px;
+  height: auto; /* altura automática */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
   .fechar {
     width: 20px;
     position: absolute;
@@ -64,7 +65,7 @@
     height: 40px;
     border-radius: 7px;
     width: 80%; 
-    margin: 0 auto 20px auto; 
+    margin: 0 auto 10px auto; 
     background-color: #c4c4c4;
     font-family: "Jockey One", sans-serif;
   }
