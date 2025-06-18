@@ -45,7 +45,7 @@ const Header = () => {
         </li>
         <li className={styles.itemMenu}>
           <a className={styles.linkMenu} href="#">
-            Consultas
+            Consultar
           </a>
           <ul className={styles.subMenu}>
             <li className={styles.itemSubMenu}>
@@ -99,7 +99,7 @@ const Header = () => {
         </li>
         <li className={styles.itemMenu} onClick={() => setOpenModalExcluir(true)}>
           <a className={styles.linkMenu}>
-            Exclusão
+            Excluir
           </a>
         </li>
       </ul>
