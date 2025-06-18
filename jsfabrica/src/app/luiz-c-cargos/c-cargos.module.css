@@ -15,10 +15,9 @@
     background: linear-gradient(to bottom, #000, #530c0c);
     border-radius: 10px;
     padding: 20px;
-     margin-top: 60px;
-    width: 1020px;
+    width: 900px;
+    height: 600px;
     max-width: 600px;
-    min-height: 90vh;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;

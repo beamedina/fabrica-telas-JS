@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from './planos.module.css';
 import Header from '@/components/Header';
+import Cadcargo from '../luiz-c-cargos/page';
 
 const Planos = () => {
   const [plano, setPlano] = useState([]);
+    const [openModalPlanos, setOpenModalPlanos] = useState(false);
 
   useEffect(() => {
     const getClientes = async () => {
@@ -44,6 +46,19 @@ const Planos = () => {
           ))}
           
         </section>
+
+
+        <button
+            className={styles.botaoPrimario}
+            type="submit"
+            onClick={() => setOpenModalPlanos(true)}
+          >
+            REGISTRAR PLanos
+          </button>
+          <Cadcargo 
+          isOpen={openModalPlanos} 
+          setOpenModal={setOpenModalPlanos}
+        />
       </main>
     </div>
   );

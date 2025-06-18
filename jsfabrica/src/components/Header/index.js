@@ -7,6 +7,7 @@ import ExcluirFunci from "@/app/mari_excluir/page";
 import CadAparelhos from "@/app/maria-c-aparelhos/page";
 import Login from "@/app/maria-t-login/page";
 import CadFuncionario from "@/app/Leticia-c-funcionario/page";
+import Cadcargo from "@/app/luiz-c-cargos/page";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,6 +16,7 @@ const Header = () => {
   const [openModalLogin, setOpenModalLogin] = useState(false); // login
   const [openModalFuncionario, setOpenModalFuncionario] = useState(false); // cadastrar funcionario
   const [openModalExcluir, setOpenModalExcluir] = useState(false);    // excluir funcionario
+  const [openModalCargos, setOpenModalECargos] = useState(false); 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -43,7 +45,7 @@ const Header = () => {
         </li>
         <li className={styles.itemMenu}>
           <a className={styles.linkMenu} href="#">
-            Registros
+            Consultas
           </a>
           <ul className={styles.subMenu}>
             <li className={styles.itemSubMenu}>
@@ -81,6 +83,11 @@ const Header = () => {
             <li className={styles.itemSubMenu} onClick={() => setOpenModalAparelhos(true)}>
               <a className={styles.linkSubmenu}>
                 Aparelhos
+              </a>
+            </li>
+            <li className={styles.itemSubMenu} onClick={() => setOpenModalECargos(true)}>
+              <a className={styles.linkSubmenu}>
+                Planos
               </a>
             </li>
           </ul>
@@ -122,6 +129,7 @@ const Header = () => {
       <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
       <Login isOpen={openModalLogin} setOpenModal={setOpenModalLogin} />
       <CadFuncionario isOpen={openModalFuncionario} setOpenModal={setOpenModalFuncionario} />
+      <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalECargos} />
     </header>
   );
 };

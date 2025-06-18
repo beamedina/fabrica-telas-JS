@@ -73,7 +73,7 @@ const Login = ({ isOpen, setOpenModal  }) => {
             />
             <label className={`${styles.label} ${styles.valor}`} htmlFor="Senha">  Senha </label>
             <input
-              type="text"
+              type="password"
               placeholder="Digite sua senha"
               className={styles.input}
               value={senha}

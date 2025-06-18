@@ -81,3 +81,23 @@
 .liPlanoAnu {
   margin-bottom: 55px;
 }
+
+.botaoPrimario, .botaoSecundario {
+    background-color: #D23636;
+    color: #E5E5E5;
+    width: 200px;
+    height: 40px;
+    font-family: "Jockey One", sans-serif;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+
