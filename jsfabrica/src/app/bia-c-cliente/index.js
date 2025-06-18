@@ -123,3 +123,5 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
 export default CadCliente;
  //testeeeeeeeeeeee
  //Amanhã vai ser outro dia
+
+ //oiii
