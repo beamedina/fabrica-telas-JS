@@ -53,7 +53,7 @@ const Planos = () => {
             type="submit"
             onClick={() => setOpenModalPlanos(true)}
           >
-            Registrar Planos
+            REGISTRAR PLANO
           </button>
           <Cadcargo 
           isOpen={openModalPlanos} 
