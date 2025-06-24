@@ -13,6 +13,7 @@ const CadFuncionario = ({ isOpen, setOpenModal }) => {
   const [senha, setSenha] = useState("");
   const [rg, setRg] = useState("");
   const [cnh, setCnh] = useState("");
+  const [busca, setBusca] = useState("");
 
   if (!isOpen) return null;
 

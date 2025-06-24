@@ -38,6 +38,38 @@
   overflow-x: scroll;
 }
 
+
+
+  .pesquisaContainer {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.campoPesquisa {
+  padding: 8px;
+  border: 1px solid #272525;
+  border-radius: 6px;
+  width: 220px;
+  font-size: 16px;
+}
+
+.botaoPesquisa {
+  padding: 8px 16px;
+  background-color: #272525;
+  color: white;
+  border: 2px solid red;
+  border-radius: 6px ;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botaoPesquisa:hover {
+  background-color: #E5E5E5;
+}
+
+
 @media (max-width: 768px) {
   .title {
       font-size: 30px;

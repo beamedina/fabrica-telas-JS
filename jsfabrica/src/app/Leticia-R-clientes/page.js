@@ -9,7 +9,7 @@ const RegistroClientes = () => {
   const [openModalExcluir, setOpenModalExcluir] = useState(false); // excluir funcionario
   const [openModalCliente, setOpenModalCliente] = useState(false); // cadastro cliente
   const [cliente, setCliente] = useState([]);
-
+  const [nomePesquisa, setNomePesquisa] = useState("");
 
   const getClientes = async () => {
       try {
@@ -37,6 +37,29 @@ const RegistroClientes = () => {
         setLoading(false);
       }
     };
+
+
+
+const handlePesquisar = async () => {
+    if (!nomePesquisa.trim()) {
+      getClientes();
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/clientes/${nomePesquisa}`);
+      if (!response.ok) {
+        throw new Error("Funcionário não encontrado");
+      }
+      const data = await response.json();
+      setCliente(data);
+    } catch (error) {
+      console.error("Erro ao pesquisar funcionário:", error.message);
+      setCliente([]); 
+    }
+  };
+
+
   
     useEffect(() => {
       getClientes();
@@ -46,6 +69,19 @@ const RegistroClientes = () => {
     <div>
       <Header />
       <main>
+ <div className={styles.pesquisaContainer}>
+          <input
+            type="text"
+            placeholder="Pesquisar por nome"
+            value={nomePesquisa}
+            onChange={(e) => setNomePesquisa(e.target.value)}
+            className={styles.campoPesquisa}
+          />
+          <button onClick={handlePesquisar} className={styles.botaoPesquisa}>
+            Pesquisar
+          </button>
+        </div>
+
         <h1 className={styles.title}>Registro de Clientes</h1>
         <div className={styles.container}>
           <table className={styles.table}>

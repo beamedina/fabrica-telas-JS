@@ -11,27 +11,18 @@ const RegistroFuncionario = () => {
   const [funcionarios, setFuncionarios] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [nomePesquisa, setNomePesquisa] = useState("");
 
   const getFuncionarios = async () => {
     try {
-      // Faz a requisição de forma assíncrona
       const response = await fetch('https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios');
-      
-      // Verifica se a resposta foi bem-sucedida (status 200-299)
       if (!response.ok) {
         throw new Error(`Erro ao buscar dados: ${response.statusText}`);
       }
-      
-      // Converte a resposta em objeto
       const data = await response.json();
-      
-      // Atualiza o estado com os dados recebidos
       setFuncionarios(data);
-      
-      // Imprime os dados no console para depuração
       console.log("Dados dos funcionários:", data);
     } catch (error) {
-      // Exibe mensagens de erro mais detalhadas no console
       console.error('Ocorreu um erro ao buscar os dados:', error.message);
       setError(error.message);
     } finally {
@@ -39,17 +30,48 @@ const RegistroFuncionario = () => {
     }
   };
 
+  const handlePesquisar = async () => {
+    if (!nomePesquisa.trim()) {
+      getFuncionarios();
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios/${nomePesquisa}`);
+      if (!response.ok) {
+        throw new Error("Funcionário não encontrado");
+      }
+      const data = await response.json();
+      setFuncionarios(data);
+    } catch (error) {
+      console.error("Erro ao pesquisar funcionário:", error.message);
+      setFuncionarios([]); 
+    }
+  };
+
   useEffect(() => {
     getFuncionarios();
   }, []);
-
-
 
   return (
     <div>
       <Header />
       <main>
         <h1 className={styles.title}>Registro de Funcionários</h1>
+
+        <div className={styles.pesquisaContainer}>
+          <input
+            type="text"
+            placeholder="Pesquisar por nome"
+            value={nomePesquisa}
+            onChange={(e) => setNomePesquisa(e.target.value)}
+            className={styles.campoPesquisa}
+          />
+          <button onClick={handlePesquisar} className={styles.botaoPesquisa}>
+            Pesquisar
+          </button>
+        </div>
+
         <div className={styles.container}>
           <table className={styles.table}>
             <thead>
@@ -57,7 +79,7 @@ const RegistroFuncionario = () => {
                 <th>ID</th>
                 <th>Cargo</th>
                 <th>CPF</th>
-                <th>Nome</th>  
+                <th>Nome</th>
                 <th>Endereço</th>
                 <th>Telefone</th>
                 <th>Email</th>
@@ -82,6 +104,7 @@ const RegistroFuncionario = () => {
             </tbody>
           </table>
         </div>
+
         <div className={styles.botoes}>
           <button
             className={styles.botaoPrimario}
@@ -98,13 +121,14 @@ const RegistroFuncionario = () => {
             EXCLUIR FUNCIONÁRIO
           </button>
         </div>
-        <CadFuncionario 
-          isOpen={openModalFuncionario} 
+
+        <CadFuncionario
+          isOpen={openModalFuncionario}
           setOpenModal={setOpenModalFuncionario}
           onFuncionarioAdded={getFuncionarios}
         />
-        <ExcluirFunci 
-          isOpen={openModalExcluir} 
+        <ExcluirFunci
+          isOpen={openModalExcluir}
           setOpenModal={setOpenModalExcluir}
           onFuncionarioRemoved={getFuncionarios}
         />
