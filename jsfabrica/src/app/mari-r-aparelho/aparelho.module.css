@@ -70,6 +70,22 @@
 }
 
 
+.botaoExcluir {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botaoExcluir:hover {
+  background-color: #c0392b;
+}
+
+
+
 @media (max-width: 768px) {
   .title {
       font-size: 30px;

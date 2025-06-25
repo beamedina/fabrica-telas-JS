@@ -25,10 +25,31 @@ const RegistroFuncionario = () => {
     } catch (error) {
       console.error('Ocorreu um erro ao buscar os dados:', error.message);
       setError(error.message);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
+
+
+   const handleExcluir = async (id) => {
+  const confirmacao = confirm("Tem certeza que deseja excluir este aparelho?");
+  if (!confirmacao) return;
+
+  try {
+    const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Erro ao excluir o aparelho");
+    }
+
+    
+    await getFuncionarios();
+    alert("Aparelho excluído com sucesso!");
+  } catch (error) {
+    console.error("Erro ao excluir:", error.message);
+    alert("Erro ao excluir o aparelho.");
+  }
+};
 
   const handlePesquisar = async () => {
     if (!nomePesquisa.trim()) {
@@ -99,6 +120,14 @@ const RegistroFuncionario = () => {
                   <td>{funcionario.email}</td>
                   <td>{funcionario.rg}</td>
                   <td>{funcionario.cnh}</td>
+                  <td>
+                     <button
+           onClick={() => handleExcluir(funcionario.idFUNCIONARIO)}
+             className={styles.botaoExcluir}
+        >
+          Excluir
+        </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

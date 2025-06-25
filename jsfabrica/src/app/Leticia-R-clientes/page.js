@@ -33,10 +33,32 @@ const RegistroClientes = () => {
    
         console.error('Ocorreu um erro ao buscar os dados:', error.message);
         setError(error.message);
-      } finally {
-        setLoading(false);
-      }
+      } 
     };
+
+
+
+      const handleExcluir = async (id) => {
+  const confirmacao = confirm("Tem certeza que deseja excluir este cliente?");
+  if (!confirmacao) return;
+
+  try {
+    const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/clientes/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Erro ao excluir o cliente");
+    }
+
+    
+    await getClientes();
+    alert("cliente excluído com sucesso!");
+  } catch (error) {
+    console.error("Erro ao excluir:", error.message);
+    alert("Erro ao excluir o aparelho.");
+  }
+};
 
 
 
@@ -104,6 +126,14 @@ const handlePesquisar = async () => {
                   <td>{cliente.endereco}</td>
                   <td>{cliente.telefone}</td>
                   <td>{cliente.plano}</td>
+                  <td>
+                     <button
+           onClick={() => handleExcluir(cliente.idCLIENTE)}
+             className={styles.botaoExcluir}
+        >
+          Excluir
+        </button>
+                  </td>
               </tr>
                ))}
             </tbody>
