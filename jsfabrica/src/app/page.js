@@ -1,17 +1,28 @@
 "use client";
-import Image from "next/image";
+import React, { useState } from "react";
 import styles from "./page.module.css";
-import Header from "@/components/Header";
 import Inicio from "./bia-telainicio";
+import Login from "./maria-t-login/page";
 
 export default function Home() {
+  const [loginOpen, setLoginOpen] = useState(true);
+  const [logado, setLogado] = useState(false);
+
+  function ConferirLogin() {
+    setLoginOpen(false);
+    setLogado(true);
+  }
+
   return (
     <div className={styles.page}>
-       <div>
-        <Inicio></Inicio>
-        </div>
-      
+      {loginOpen && (
+        <Login
+          isOpen={loginOpen}
+          setOpenModal={setLoginOpen}
+          testeLogin={ConferirLogin}  // chama quando login OK
+        />
+      )}
+      {logado && <Inicio />}
     </div>
   );
 }
- //mas um

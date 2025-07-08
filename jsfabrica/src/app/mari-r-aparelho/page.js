@@ -4,12 +4,15 @@ import styles from "./aparelho.module.css";
 import Header from "@/components/Header";
 import CadAparelhos from "../maria-c-aparelhos/page";
 import ExcluirFunci from "../mari_excluir/page";
+import AtAparelhos from "../atualizar-aparelho/page";
 
 const RegistroAparelhos = () => {
   const [openModalExcluir, setOpenModalExcluir] = useState(false); // excluir funcionario
   const [openModalAparelhos, setOpenModalAparelhos] = useState(false);
   const [aparelho, setAparelho] = useState([]);
+  const [openModalAtaparelhos, setOpenModalAtAparelho] = useState(false);
   const [nomePesquisa, setNomePesquisa] = useState(""); // cadastro aparelhos
+  const [aparelhoSelecionado, setAparelhoSelecionado] = useState(null);
  const getAparelhos = async () => {
       try {
         
@@ -128,6 +131,14 @@ const handlePesquisar = async () => {
         >
           Excluir
         </button>
+         <button
+           onClick={() =>   {
+              setAparelhoSelecionado(aparelho);
+              setOpenModalAtAparelho(true);
+            }}
+        >
+          Atualizar
+        </button>
         </td>
 
               </tr>
@@ -151,9 +162,16 @@ const handlePesquisar = async () => {
           >
             EXCLUIR APARELHO
           </button>
+
         </div>
         <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
         <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
+        <AtAparelhos
+         isOpen={openModalAtaparelhos}
+          setOpenModal={setOpenModalAtAparelho}
+          dadosOriginais={aparelhoSelecionado}
+          atualizar={getAparelhos}
+          />
       </main>
     </div>
   );

@@ -4,6 +4,7 @@ import styles from "./r-funcionarios.module.css";
 import Header from "@/components/Header";
 import CadFuncionario from "../Leticia-c-funcionario/page";
 import ExcluirFunci from "../mari_excluir/page";
+import AtFuncionario from "../atualizar-funcionario/page"; // Corrigido com A maiúsculo
 
 const RegistroFuncionario = () => {
   const [openModalExcluir, setOpenModalExcluir] = useState(false);
@@ -12,10 +13,12 @@ const RegistroFuncionario = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [nomePesquisa, setNomePesquisa] = useState("");
+  const [openModalAtFuncionario, setOpenModalAtFuncionario] = useState(false); // Corrigido para boolean
+  const [funcionarioSelecionado, setFuncionarioSelecionado] = useState(null);
 
   const getFuncionarios = async () => {
     try {
-      const response = await fetch('https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios');
+      const response = await fetch("https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios");
       if (!response.ok) {
         throw new Error(`Erro ao buscar dados: ${response.statusText}`);
       }
@@ -23,33 +26,31 @@ const RegistroFuncionario = () => {
       setFuncionarios(data);
       console.log("Dados dos funcionários:", data);
     } catch (error) {
-      console.error('Ocorreu um erro ao buscar os dados:', error.message);
+      console.error("Ocorreu um erro ao buscar os dados:", error.message);
       setError(error.message);
-    } 
+    }
   };
 
+  const handleExcluir = async (id) => {
+    const confirmacao = confirm("Tem certeza que deseja excluir este funcionário?");
+    if (!confirmacao) return;
 
-   const handleExcluir = async (id) => {
-  const confirmacao = confirm("Tem certeza que deseja excluir este aparelho?");
-  if (!confirmacao) return;
+    try {
+      const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios/${id}`, {
+        method: "DELETE",
+      });
 
-  try {
-    const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios/${id}`, {
-      method: "DELETE",
-    });
+      if (!response.ok) {
+        throw new Error("Erro ao excluir o funcionário");
+      }
 
-    if (!response.ok) {
-      throw new Error("Erro ao excluir o aparelho");
+      await getFuncionarios();
+      alert("Funcionário excluído com sucesso!");
+    } catch (error) {
+      console.error("Erro ao excluir:", error.message);
+      alert("Erro ao excluir o funcionário.");
     }
-
-    
-    await getFuncionarios();
-    alert("Aparelho excluído com sucesso!");
-  } catch (error) {
-    console.error("Erro ao excluir:", error.message);
-    alert("Erro ao excluir o aparelho.");
-  }
-};
+  };
 
   const handlePesquisar = async () => {
     if (!nomePesquisa.trim()) {
@@ -66,7 +67,7 @@ const RegistroFuncionario = () => {
       setFuncionarios(data);
     } catch (error) {
       console.error("Erro ao pesquisar funcionário:", error.message);
-      setFuncionarios([]); 
+      setFuncionarios([]);
     }
   };
 
@@ -106,6 +107,7 @@ const RegistroFuncionario = () => {
                 <th>Email</th>
                 <th>RG</th>
                 <th>CNH</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -121,12 +123,20 @@ const RegistroFuncionario = () => {
                   <td>{funcionario.rg}</td>
                   <td>{funcionario.cnh}</td>
                   <td>
-                     <button
-           onClick={() => handleExcluir(funcionario.idFUNCIONARIO)}
-             className={styles.botaoExcluir}
-        >
-          Excluir
-        </button>
+                    <button
+                      onClick={() => {
+                        setFuncionarioSelecionado(funcionario);
+                        setOpenModalAtFuncionario(true);
+                      }}
+                    >
+                      Atualizar
+                    </button>
+                    <button
+                      onClick={() => handleExcluir(funcionario.idFUNCIONARIO)}
+                      className={styles.botaoExcluir}
+                    >
+                      Excluir
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -156,10 +166,18 @@ const RegistroFuncionario = () => {
           setOpenModal={setOpenModalFuncionario}
           onFuncionarioAdded={getFuncionarios}
         />
+
         <ExcluirFunci
           isOpen={openModalExcluir}
           setOpenModal={setOpenModalExcluir}
           onFuncionarioRemoved={getFuncionarios}
+        />
+
+        <AtFuncionario
+          isOpen={openModalAtFuncionario}
+          setOpenModal={setOpenModalAtFuncionario}
+          dadosOriginais={funcionarioSelecionado}
+          atualizar={getFuncionarios}
         />
       </main>
     </div>

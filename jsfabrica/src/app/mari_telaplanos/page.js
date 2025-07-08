@@ -1,28 +1,33 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import styles from './planos.module.css';
-import Header from '@/components/Header';
-import Cadcargo from '../luiz-c-cargos/page';
+import React, { useState, useEffect } from "react";
+import styles from "./planos.module.css";
+import Header from "@/components/Header";
+import ExcluirFunci from "../mari_excluir/page";
+import AtPlanos from "../atualizar-planos/page";
 
 const Planos = () => {
   const [plano, setPlano] = useState([]);
-    const [openModalPlanos, setOpenModalPlanos] = useState(false);
+  const [openModalPlanos, setOpenModalPlanos] = useState(false);
+  const [planoSelecionado, setPlanoSelecionado] = useState(null);
+  const [opneModalAtplanos, setOpenModalAtPlanos] = useState(false)
+
+ const getPlanos = async () => {
+    try {
+      const response = await fetch("https://ifitnessapi.dev.vilhena.ifro.edu.br/planos");
+      if (!response.ok) {
+        throw new Error(`Erro ao buscar dados: ${response.statusText}`);
+      }
+      const data = await response.json();
+      setPlano(data);
+      console.log("Dados dos planos:", data);
+    } catch (error) {
+      console.error("Ocorreu um erro ao buscar os dados:", error.message);
+    }
+  };
+
 
   useEffect(() => {
-    const getClientes = async () => {
-      try {
-        const response = await fetch('https://ifitnessapi.dev.vilhena.ifro.edu.br/planos');
-        if (!response.ok) {
-          throw new Error(`Erro ao buscar dados: ${response.statusText}`);
-        }
-        const data = await response.json();
-        setPlano(data);
-        console.log("Dados dos funcionários:", data);
-      } catch (error) {
-        console.error('Ocorreu um erro ao buscar os dados:', error.message);
-      }
-    };
-    getClientes();
+    getPlanos();
   }, []);
 
   return (
@@ -30,40 +35,58 @@ const Planos = () => {
       <Header />
       <main className={styles.mainPlanos}>
         <section className={styles.plansSection}>
-          {plano.map((plano, index) => (
+          {plano.map((planoItem, index) => (
             <div key={index}>
-              <h2>{plano.nome}</h2>
+              <h2>{planoItem.nome}</h2>
               <div className={styles.plan}>
-                <p>{plano.preco}</p>
+                <p>{planoItem.preco}</p>
+                <p>{planoItem.idPlano}</p>
                 <ul>
-                  <li className={styles[`liPlano${plano.nome}`]}>
-          {plano.descricao}
-        </li>
-                 
+                  <li className={styles[`liPlano${planoItem.nome}`]}>
+                    {planoItem.descricao}
+                  </li>
                 </ul>
+                <button
+                  onClick={() => {
+                    setPlanoSelecionado(planoItem.id);
+                    setOpenModalPlanos(true);
+                  }}
+                  className={styles.botaoExcluir}
+                >
+                  Excluir
+                </button>
+                <button
+                  onClick={() => {
+                    setPlanoSelecionado(planoItem);
+                    setOpenModalAtPlanos(true);
+                  }}
+                  className={styles.botaoExcluir}
+                >
+                  Atualizar
+                </button>
               </div>
             </div>
           ))}
-          
         </section>
 
-
-        <button
-            className={styles.botaoPrimario}
-            type="submit"
-            onClick={() => setOpenModalPlanos(true)}
-          >
-            REGISTRAR PLANO
-          </button>
-          <Cadcargo 
-          isOpen={openModalPlanos} 
+        <ExcluirFunci
+          isOpen={openModalPlanos}
           setOpenModal={setOpenModalPlanos}
+          id={planoSelecionado}
+          onExcluido={(idExcluido) => {
+            setPlano((prev) => prev.filter((p) => p.id !== idExcluido));
+          }}
+        />
+
+        <AtPlanos
+         isOpen={opneModalAtplanos}
+         setOpenModal={setOpenModalAtPlanos}
+         dadosOriginais={planoSelecionado}
+         atualizar={getPlanos}
         />
       </main>
     </div>
   );
 };
-
-//teste maiiiis yyy
 
 export default Planos;
