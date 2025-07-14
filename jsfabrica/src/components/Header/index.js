@@ -8,7 +8,7 @@ import ExcluirFunci from "@/app/mari_excluir/page";
 import CadAparelhos from "@/app/maria-c-aparelhos/page";
 import Login from "@/app/maria-t-login/page";
 import CadFuncionario from "@/app/Leticia-c-funcionario/page";
-import Cadcargo from "@/app/luiz-c-cargos/page";
+import Cadcargo from "@/app/luiz-c-planos/page";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
