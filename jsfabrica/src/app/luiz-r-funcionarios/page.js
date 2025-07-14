@@ -10,11 +10,11 @@ const RegistroFuncionario = () => {
   const [openModalExcluir, setOpenModalExcluir] = useState(false);
   const [openModalFuncionario, setOpenModalFuncionario] = useState(false);
   const [funcionarios, setFuncionarios] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [nomePesquisa, setNomePesquisa] = useState("");
-  const [openModalAtFuncionario, setOpenModalAtFuncionario] = useState(false); // Corrigido para boolean
+  const [openModalAtFuncionario, setOpenModalAtFuncionario] = useState(false); 
   const [funcionarioSelecionado, setFuncionarioSelecionado] = useState(null);
+  const [funcionariosFiltrados, setFuncionariosFiltrados] = useState([]);
 
   const getFuncionarios = async () => {
     try {
@@ -57,6 +57,8 @@ const RegistroFuncionario = () => {
       getFuncionarios();
       return;
     }
+    
+    
 
     try {
       const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/funcionarios/${nomePesquisa}`);
@@ -70,6 +72,7 @@ const RegistroFuncionario = () => {
       setFuncionarios([]);
     }
   };
+  
 
   useEffect(() => {
     getFuncionarios();
@@ -128,8 +131,10 @@ const RegistroFuncionario = () => {
                         setFuncionarioSelecionado(funcionario);
                         setOpenModalAtFuncionario(true);
                       }}
+                      className={styles.botaoAtualizar}
                     >
                       Atualizar
+                      
                     </button>
                     <button
                       onClick={() => handleExcluir(funcionario.idFUNCIONARIO)}
@@ -151,13 +156,6 @@ const RegistroFuncionario = () => {
             onClick={() => setOpenModalFuncionario(true)}
           >
             REGISTRAR FUNCIONÁRIO
-          </button>
-          <button
-            className={styles.botaoSecundario}
-            type="button"
-            onClick={() => setOpenModalExcluir(true)}
-          >
-            EXCLUIR FUNCIONÁRIO
           </button>
         </div>
 

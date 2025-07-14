@@ -19,12 +19,13 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   padding: 20px 40px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   width: 100vw;
-
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  position: relative;
 }
+
 
 .titulo{
   color: #ffff;
@@ -38,12 +39,13 @@
   gap: 15px;
   list-style-type: none;
   height: 50px;
-  width: 100%;
   max-width: 410px;
-  right: 20px;
-  flex-grow: 1;
-
+  position: absolute; 
+  left: 45%;
+  transform: translateX(-50%);
 }
+
+
 
 
 

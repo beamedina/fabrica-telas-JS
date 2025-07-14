@@ -9,7 +9,7 @@ const AtPlanos = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
   const [descricao, setDescricao] = useState("");
   const [preco, setPreco] = useState("");
 
-  // ✅ Hook no topo com verificação interna
+ 
   useEffect(() => {
     if (isOpen && dadosOriginais) {
       setNome(dadosOriginais.nome || "");
@@ -18,7 +18,7 @@ const AtPlanos = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
     }
   }, [isOpen, dadosOriginais]);
 
-  // ✅ Evita renderização se o modal estiver fechado
+
   if (!isOpen) return null;
 
   const resetForm = () => {
@@ -34,7 +34,7 @@ const AtPlanos = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
 
     try {
       const response = await fetch(url, {
-        method: "PUT", // PUT para atualização parcial ou completa
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },

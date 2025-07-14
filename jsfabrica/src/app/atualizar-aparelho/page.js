@@ -72,7 +72,7 @@ const AtAparelhos = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
          onClick={() => setOpenModal (false)} 
               />
         <div className={styles.div}>
-          <h1>Cadastrar Aparelhos</h1>
+          <h1>atualizar Aparelhos</h1>
           <form onSubmit={handleSubmit}>
             <label className={styles.label} htmlFor="nome"> Nome </label>
             <input

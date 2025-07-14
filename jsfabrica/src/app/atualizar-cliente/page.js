@@ -6,7 +6,7 @@ import styles from "./atcliente.module.css";
 import Image from "next/image";
 
 const AtCliente = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
-  if (!isOpen || !dadosOriginais) return null; // só abre se tiver dados para atualizar
+  if (!isOpen || !dadosOriginais) return null; 
 
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");

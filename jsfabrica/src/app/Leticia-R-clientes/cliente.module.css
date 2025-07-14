@@ -60,8 +60,33 @@
   font-size: 16px;
 }
 
+.botaoExcluir{
+  background-color:#807f7f;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 6px ;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.botaoAtualizar{
+  background-color:#5c0606;
+  padding: 8px 9px;
+  color: white;
+  border-radius: 6px ;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .botaoPesquisa:hover {
   background-color: #E5E5E5;
+}
+
+.botoes{
+  display: flex;
+  justify-content: center;
+  
 }
 
 

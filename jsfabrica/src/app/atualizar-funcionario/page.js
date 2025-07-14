@@ -14,7 +14,7 @@ const AtFuncionario = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
   const [rg, setRg] = useState("");
   const [cnh, setCnh] = useState("");
 
-  // Sempre execute hooks fora de ifs
+ 
   useEffect(() => {
     if (dadosOriginais) {
       setCargo(dadosOriginais.cargo || "");
@@ -83,7 +83,7 @@ const AtFuncionario = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
 };
 
 
-  // Aqui controlamos a exibição do conteúdo
+  
   if (!isOpen) return null;
 
   return (

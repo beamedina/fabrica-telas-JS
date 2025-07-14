@@ -26,7 +26,8 @@ const RegistroClientes = () => {
   };
 
   const handleExcluir = async (id) => {
-    if (!confirm("Tem certeza que deseja excluir este cliente?")) return;
+    if (!confirm("Tem certeza que deseja excluir este cliente?")) 
+      return
     try {
       const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/clientes/${id}`, {
         method: "DELETE",
@@ -64,6 +65,7 @@ const RegistroClientes = () => {
     <div>
       <Header />
       <main>
+      <h1 className={styles.title}>Registro de Clientes</h1>
         <div className={styles.pesquisaContainer}>
           <input
             type="text"
@@ -77,7 +79,7 @@ const RegistroClientes = () => {
           </button>
         </div>
 
-        <h1 className={styles.title}>Registro de Clientes</h1>
+        
         <div className={styles.container}>
           <table className={styles.table}>
             <thead>
@@ -106,7 +108,7 @@ const RegistroClientes = () => {
                         setClienteSelecionado(cliente);
                         setOpenModalAtCliente(true);
                       }}
-                      className={styles.botaoExcluir}
+                      className={styles.botaoAtualizar}
                     >
                       Atualizar
                     </button>
@@ -133,12 +135,7 @@ const RegistroClientes = () => {
           >
             REGISTRAR CLIENTE
           </button>
-          <button
-            className={styles.botaoSecundario}
-            onClick={() => setOpenModalExcluir(true)}
-          >
-            EXCLUIR CLIENTE
-          </button>
+
         </div>
 
         <CadCliente

@@ -7,11 +7,11 @@ import ExcluirFunci from "../mari_excluir/page";
 import AtAparelhos from "../atualizar-aparelho/page";
 
 const RegistroAparelhos = () => {
-  const [openModalExcluir, setOpenModalExcluir] = useState(false); // excluir funcionario
+  const [openModalExcluir, setOpenModalExcluir] = useState(false); 
   const [openModalAparelhos, setOpenModalAparelhos] = useState(false);
   const [aparelho, setAparelho] = useState([]);
   const [openModalAtaparelhos, setOpenModalAtAparelho] = useState(false);
-  const [nomePesquisa, setNomePesquisa] = useState(""); // cadastro aparelhos
+  const [nomePesquisa, setNomePesquisa] = useState(""); 
   const [aparelhoSelecionado, setAparelhoSelecionado] = useState(null);
  const getAparelhos = async () => {
       try {
@@ -20,7 +20,7 @@ const RegistroAparelhos = () => {
         
        
         if (!response.ok) {
-          throw new Error(`Erro ao buscar dados: ${response.statusText}`);
+          throw new Error(`Erro ao buscar dados`);
         }
         
        
@@ -92,7 +92,13 @@ const handlePesquisar = async () => {
     <div>
       <Header />
       <main>
-<div className={styles.pesquisaContainer}>
+
+
+
+        <h1 className={styles.title}>Registro de Aparelhos</h1>
+        <div className={styles.container}>
+
+        <div className={styles.pesquisaContainer}>
           <input
             type="text"
             placeholder="Pesquisar por nome"
@@ -104,10 +110,6 @@ const handlePesquisar = async () => {
             Pesquisar
           </button>
         </div>
-
-
-        <h1 className={styles.title}>Registro de Aparelhos</h1>
-        <div className={styles.container}>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -132,6 +134,7 @@ const handlePesquisar = async () => {
           Excluir
         </button>
          <button
+           className={styles.botaoAtualizar}
            onClick={() =>   {
               setAparelhoSelecionado(aparelho);
               setOpenModalAtAparelho(true);
@@ -154,13 +157,6 @@ const handlePesquisar = async () => {
             onClick={() => setOpenModalAparelhos(true)}
           >
             REGISTRAR APARELHO
-          </button>
-          <button
-            className={styles.botaoSecundario}
-            type="submit"
-            onClick={() => setOpenModalExcluir(true)}
-          >
-            EXCLUIR APARELHO
           </button>
 
         </div>

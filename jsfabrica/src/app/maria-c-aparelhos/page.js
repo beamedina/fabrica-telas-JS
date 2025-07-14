@@ -37,7 +37,7 @@ const CadAparelhos = ({ isOpen, setOpenModal  }) => {
         if (response.ok) {
           alert("aparelho cadastrado com sucesso!");
           resetForm();
-          setOpenModal(false); // fecha o modal
+          setOpenModal(false); 
         } else {
           alert("Erro ao cadastrar: " + data.message);
         }

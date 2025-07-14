@@ -81,23 +81,9 @@ const Header = () => {
           <li className={styles.itemMenu}>
             <a className={styles.linkMenu} href="/mari_telaplanos">Planos</a>
           </li>
-          <li className={styles.itemMenu} onClick={() => setOpenModalExcluir(true)}>
-            <a className={styles.linkMenu}>Excluir</a>
-          </li>
         </ul>
 
-        <form className={styles.search}>
-          <input type="text" placeholder="Pesquisar" />
-          <button type="submit">
-            <Image
-              className={styles.user}
-              src='/Image/lupa.svg'
-              alt='Pesquisar'
-              width={10}
-              height={10}
-            />
-          </button>
-        </form>
+
       </nav>
 
       <div className={styles.mobile} onClick={toggleMenu}>
@@ -115,7 +101,7 @@ const Header = () => {
         isOpen={openModalLogin} 
         setOpenModal={setOpenModalLogin}
         setUsuarioLogado={setUsuarioLogado}
-        testeLogin={() => {}} // você pode ajustar isso se necessário
+        testeLogin={() => {}} 
       />
       <CadFuncionario isOpen={openModalFuncionario} setOpenModal={setOpenModalFuncionario} />
       <Cadcargo isOpen={openModalCargos} setOpenModal={setOpenModalECargos} />

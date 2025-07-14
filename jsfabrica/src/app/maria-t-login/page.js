@@ -31,7 +31,7 @@ const Login = ({ isOpen, setOpenModal, testeLogin }) => {
         setOpenModal(false);  
         testeLogin();         
       } else {
-        alert("Erro ao cadastrar: " + data.message);
+        alert("Erro ao logar: " + data.message);
       }
     } catch (error) {
       console.error("Erro ao conectar com a API:", error);

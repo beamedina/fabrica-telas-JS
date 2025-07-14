@@ -24,7 +24,7 @@ const ExcluirFunci = ({ isOpen, setOpenModal }) => {
       }
 
       alert("Plano excluído com sucesso!");
-      setOpenModal(false); // Fecha o modal
+      setOpenModal(false); 
     } catch (error) {
       console.error("Erro ao excluir:", error.message);
       alert("Erro ao excluir o plano.");
