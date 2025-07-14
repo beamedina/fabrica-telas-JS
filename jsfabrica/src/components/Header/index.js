@@ -4,7 +4,6 @@ import styles from "./Header.module.css";
 import Image from 'next/image';
 
 import CadCliente from "@/app/bia-c-cliente";
-import ExcluirFunci from "@/app/mari_excluir/page";
 import CadAparelhos from "@/app/maria-c-aparelhos/page";
 import Login from "@/app/maria-t-login/page";
 import CadFuncionario from "@/app/Leticia-c-funcionario/page";
@@ -96,7 +95,6 @@ const Header = () => {
 
       <CadCliente isOpen={openModalCliente} setOpenModal={setOpenModalCliente} />
       <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
-      <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
       <Login 
         isOpen={openModalLogin} 
         setOpenModal={setOpenModalLogin}

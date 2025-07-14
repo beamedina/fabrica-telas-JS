@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./planos.module.css";
 import Header from "@/components/Header";
-import ExcluirFunci from "../mari_excluir/page";
 import AtPlanos from "../atualizar-planos/page";
 
 const Planos = () => {
@@ -69,14 +68,6 @@ const Planos = () => {
           ))}
         </section>
 
-        <ExcluirFunci
-          isOpen={openModalPlanos}
-          setOpenModal={setOpenModalPlanos}
-          id={planoSelecionado}
-          onExcluido={(idExcluido) => {
-            setPlano((prev) => prev.filter((p) => p.id !== idExcluido));
-          }}
-        />
 
         <AtPlanos
          isOpen={opneModalAtplanos}

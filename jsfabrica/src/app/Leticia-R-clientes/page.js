@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./cliente.module.css";
 import Header from "@/components/Header";
 import CadCliente from "../bia-c-cliente";
-import ExcluirFunci from "../mari_excluir/page";
 import AtCliente from "../atualizar-cliente/page";
 
 const RegistroClientes = () => {
@@ -150,10 +149,7 @@ const RegistroClientes = () => {
           atualizar={getClientes}
         />
 
-        <ExcluirFunci
-          isOpen={openModalExcluir}
-          setOpenModal={setOpenModalExcluir}
-        />
+
       </main>
     </div>
   );

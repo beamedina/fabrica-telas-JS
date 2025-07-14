@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./r-funcionarios.module.css";
 import Header from "@/components/Header";
 import CadFuncionario from "../Leticia-c-funcionario/page";
-import ExcluirFunci from "../mari_excluir/page";
-import AtFuncionario from "../atualizar-funcionario/page"; // Corrigido com A maiúsculo
+import AtFuncionario from "../atualizar-funcionario/page"; 
 
 const RegistroFuncionario = () => {
   const [openModalExcluir, setOpenModalExcluir] = useState(false);
@@ -165,11 +164,7 @@ const RegistroFuncionario = () => {
           onFuncionarioAdded={getFuncionarios}
         />
 
-        <ExcluirFunci
-          isOpen={openModalExcluir}
-          setOpenModal={setOpenModalExcluir}
-          onFuncionarioRemoved={getFuncionarios}
-        />
+
 
         <AtFuncionario
           isOpen={openModalAtFuncionario}

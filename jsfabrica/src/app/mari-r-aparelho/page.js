@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./aparelho.module.css";
 import Header from "@/components/Header";
 import CadAparelhos from "../maria-c-aparelhos/page";
-import ExcluirFunci from "../mari_excluir/page";
 import AtAparelhos from "../atualizar-aparelho/page";
 
 const RegistroAparelhos = () => {
@@ -161,7 +160,6 @@ const handlePesquisar = async () => {
 
         </div>
         <CadAparelhos isOpen={openModalAparelhos} setOpenModal={setOpenModalAparelhos} />
-        <ExcluirFunci isOpen={openModalExcluir} setOpenModal={setOpenModalExcluir} />
         <AtAparelhos
          isOpen={openModalAtaparelhos}
           setOpenModal={setOpenModalAtAparelho}
