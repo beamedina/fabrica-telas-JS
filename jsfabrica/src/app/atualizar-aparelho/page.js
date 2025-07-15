@@ -99,7 +99,7 @@ const AtAparelhos = ({ isOpen, setOpenModal, dadosOriginais, atualizar }) => {
               value={quantidade}
               onChange={(e) => setQuantidade(e.target.value)}
             />
-              <button type="submit" className={styles.button}> Registrar </button>
+              <button type="submit" className={styles.button}> Atualizar </button>
           </form>
         
         </div>

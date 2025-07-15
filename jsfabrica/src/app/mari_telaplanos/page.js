@@ -50,7 +50,7 @@ const Planos = () => {
                     setPlanoSelecionado(planoItem.id);
                     setOpenModalPlanos(true);
                   }}
-                  className={styles.botaoExcluir}
+                  className={styles.botaoAtualizar}
                 >
                   Excluir
                 </button>

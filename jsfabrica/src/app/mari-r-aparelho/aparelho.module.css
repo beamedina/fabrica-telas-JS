@@ -108,6 +108,13 @@
   
 }
 
+.di{
+  width: 5px;
+}
+.di2{
+  width: 5px;
+}
+
 
 @media (max-width: 768px) {
   .title {

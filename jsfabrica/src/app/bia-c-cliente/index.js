@@ -73,7 +73,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <label className={`${styles.label} ${styles.valor}`} htmlFor="cpf">  CPF </label>
             <input
               type="text"
-              placeholder="Digite o CPF do usuário"
+              placeholder="Digite o CPF do cliente"
               className={styles.input}
               value={cpf}
               onChange={(e) => setCpf(e.target.value)}
@@ -81,7 +81,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <label className={`${styles.label} ${styles.valor}`} htmlFor="cpf">  Nome </label>
             <input
               type="text"
-              placeholder="Digite o nome do usuário"
+              placeholder="Digite o nome do cliente"
               className={styles.input}
               value={nome}
               onChange={(e) => setNome(e.target.value)}
@@ -89,7 +89,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <label className={`${styles.label} ${styles.valor}`} htmlFor="cpf">  Endereço </label>
             <input
               type="text"
-              placeholder="Digite o Endereço do usuário"
+              placeholder="Digite o Endereço do cliente"
               className={styles.input}
               value={endereco}
               onChange={(e) => setEndereco(e.target.value)}
@@ -97,7 +97,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <label className={`${styles.label} ${styles.valor}`} htmlFor="cpf">  Telefone </label>
             <input
               type="text"
-              placeholder="Digite o telefone do usuário"
+              placeholder="Digite o telefone do cliente"
               className={styles.input}
               value={telefone}
               onChange={(e) => setTelefone(e.target.value)}
@@ -105,7 +105,7 @@ const CadCliente = ({ isOpen, setOpenModal }) => {
             <label className={styles.label} htmlFor="plano"> Plano </label>
             <input
               type="text"
-              placeholder="Digite o plano do usuário"
+              placeholder="Digite o plano do cliente"
               className={styles.input}
               value={plano}
               onChange={(e) => setPlano(e.target.value)}

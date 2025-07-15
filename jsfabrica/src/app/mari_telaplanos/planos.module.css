@@ -81,6 +81,30 @@
 .liPlanoAnu {
   margin-bottom: 55px;
 }
+.botaoExcluir{
+  background-color:#807f7f;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 6px ;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.botaoAtualizar{
+  background-color:#5c0606;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 6px ;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botoes{
+  display: flex;
+  justify-content: center;
+  
+}
 
 .botaoPrimario, .botaoSecundario {
     background-color: #D23636;

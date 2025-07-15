@@ -115,7 +115,8 @@ const handlePesquisar = async () => {
                 <th>ID</th>
                 <th>Aparelho</th>
                 <th>Local</th>
-                <th></th>
+                <th>Quantidade</th>
+                <th className="di">Ações</th>
                 
               </tr>
             </thead>
@@ -125,14 +126,10 @@ const handlePesquisar = async () => {
                   <td>{aparelho.idAparelho}</td>
                   <td>{aparelho.nome}</td>
                   <td>{aparelho.local}</td>
-                  <td>
-             <button
-           onClick={() => handleExcluir(aparelho.idAparelho)}
-             className={styles.botaoExcluir}
-        >
-          Excluir
-        </button>
-         <button
+                    <td>{aparelho.quantidade}</td>
+                  <td className="di2">
+
+                             <button
            className={styles.botaoAtualizar}
            onClick={() =>   {
               setAparelhoSelecionado(aparelho);
@@ -141,6 +138,15 @@ const handlePesquisar = async () => {
         >
           Atualizar
         </button>
+                
+
+             <button
+           onClick={() => handleExcluir(aparelho.idAparelho)}
+             className={styles.botaoExcluir}
+        >
+          Excluir
+        </button>
+
         </td>
 
               </tr>
