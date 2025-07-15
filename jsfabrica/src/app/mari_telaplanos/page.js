@@ -29,7 +29,7 @@ const Planos = () => {
     if (!confirmacao) return;
 
     try {
-      const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/plano/${id}`, {
+      const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/planos/${id}`, {
         method: "DELETE",
       });
 
@@ -37,7 +37,7 @@ const Planos = () => {
         throw new Error("Erro ao excluir o plano");
       }
 
-      await getFuncionarios();
+      await getPlanos();
       alert("Plano excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir:", error.message);
@@ -55,8 +55,8 @@ const Planos = () => {
       <Header />
       <main className={styles.mainPlanos}>
         <section className={styles.plansSection}>
-          {plano.map((planoItem, index) => (
-            <div key={index}>
+          {plano.map((planoItem, idPlano) => (
+            <div key={idPlano}>
               <h2>{planoItem.nome}</h2>
               <div className={styles.plan}>
                 <p>{planoItem.preco}</p>
@@ -78,7 +78,7 @@ const Planos = () => {
                 </button>
 
                   <button
-                   onClick={() => handleExcluir(planoItem.id)}
+                   onClick={() => handleExcluir(planoItem.idPlano)}
                   className={styles.botaoExcluir}
                 >
                   Excluir
