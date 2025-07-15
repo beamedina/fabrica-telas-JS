@@ -24,6 +24,27 @@ const Planos = () => {
     }
   };
 
+  const handleExcluir = async (id) => {
+    const confirmacao = confirm("Tem certeza que deseja excluir este plano?");
+    if (!confirmacao) return;
+
+    try {
+      const response = await fetch(`https://ifitnessapi.dev.vilhena.ifro.edu.br/plano/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao excluir o plano");
+      }
+
+      await getFuncionarios();
+      alert("Plano excluído com sucesso!");
+    } catch (error) {
+      console.error("Erro ao excluir:", error.message);
+      alert("Erro ao excluir o plano.");
+    }
+  };
+
 
   useEffect(() => {
     getPlanos();
@@ -45,23 +66,22 @@ const Planos = () => {
                     {planoItem.descricao}
                   </li>
                 </ul>
-                <button
-                  onClick={() => {
-                    setPlanoSelecionado(planoItem.id);
-                    setOpenModalPlanos(true);
-                  }}
-                  className={styles.botaoAtualizar}
-                >
-                  Excluir
-                </button>
+              
                 <button
                   onClick={() => {
                     setPlanoSelecionado(planoItem);
                     setOpenModalAtPlanos(true);
                   }}
-                  className={styles.botaoExcluir}
+                  className={styles.botaoAtualizar}
                 >
                   Atualizar
+                </button>
+
+                  <button
+                   onClick={() => handleExcluir(planoItem.id)}
+                  className={styles.botaoExcluir}
+                >
+                  Excluir
                 </button>
               </div>
             </div>
